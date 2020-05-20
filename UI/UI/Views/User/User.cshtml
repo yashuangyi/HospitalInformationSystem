@@ -1,0 +1,102 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>用户管理</title>
+    <script src="../../Scripts/jquery-3.4.1.js"></script>
+    <script src="../../Source/packages/layui/layui.js"></script>
+    <script src="../../Scripts/Project/User/user.js"></script>
+    <link rel="stylesheet" href="../../Source/packages/layui/css/layui.css">
+</head>
+<body>
+    <div class="layui-fluid">
+        <div class="layui-row layui-col-space15">
+            <div class="layui-col-md16">
+                <div class="layui-card">
+                    <div class="layui-card-header">用户管理</div>
+                    <div class="layui-card-body">
+
+                        <blockquote class="layui-elem-quote layui-quote-nm">
+                            <button class="layui-btn" onclick="btn_addUser()">新增管理员</button>
+                            <button class="layui-btn layui-btn-radius layui-btn-danger" onclick="btn_exportData()"><i class="layui-icon">&#xe601;</i>备份数据</button>
+                        </blockquote>
+                        <blockquote class="layui-elem-quote layui-quote-nm">
+                            <form class="layui-form">
+                                <div class="layui-form-item">
+                                    <div class="layui-inline">
+                                        <label class="layui-form-label">用户查询</label>
+                                        <div class="layui-input-block">
+                                            <input type="text" name="input" id="input" lay-verify="required" style="width:400px;" placeholder="请输入待查询用户名，支持模糊查询" autocomplete="off" class="layui-input">
+                                        </div>
+                                    </div>
+                                    <button type="button" class="layui-btn layui-btn-normal" id="search">
+                                        <i class="layui-icon">&#xe615;</i>
+                                    </button>
+                                </div>
+                            </form>
+                        </blockquote>
+                        <blockquote class="layui-elem-quote layui-quote-nm">
+                            <!--用户的表格-->
+                            <table id="table_user" lay-filter="table_user"></table>
+                        </blockquote>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--新增用户的弹窗-->
+    <div style="padding-left:20px;padding-right:20px;padding-top:20px" id="div_addUser" hidden>
+        <form class="layui-form">
+            <div class="layui-form-item">
+                <label class="layui-form-label"><span style="color:red">*</span>账号</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="account" id="userAccount" lay-verify="required" placeholder="请输入账号" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label"><span style="color:red">*</span>密码</label>
+                <div class="layui-input-inline">
+                    <input type="password" name="password" id="userPw" lay-verify="required" placeholder="请输入密码" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label"><span style="color:red">*</span>确认密码</label>
+                <div class="layui-input-inline">
+                    <input type="password" name="pwAgain" id="userPwAgain" lay-verify="required" placeholder="请再次输入密码" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label"><span style="color:red">*</span>权限设置</label>
+                <div class="layui-input-block">
+                    <input type="radio" name="power" id="radio_admin" value="管理员" title="管理员" class="layui-form-radio" checked>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label"><span style="color:red">*</span>名字</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="name" id="userName" lay-verify="required" placeholder="请输入用户名" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <!--以下属性不显示，便于更新账户文件-->
+            <div class="layui-form-item" hidden>
+                <textarea id="userId" name="id"></textarea>
+            </div>
+        </form>
+    </div>
+
+
+    <!--修改表格的工具列-->
+    <script type="text/html" id="toolbar">
+        {{# if(d.Power === '管理员'){ }}
+        <a class="operation" lay-event="edit" title="修改用户信息">
+            <i class="layui-icon layui-icon-edit"></i>修改
+        </a>
+        <a class="operation" style="margin-left:10px;" lay-event="del" title="删除此账户">
+            <i class="layui-icon layui-icon-delete"></i>删除
+        </a>
+        {{#  } }}
+    </script>
+</body>
+</html>

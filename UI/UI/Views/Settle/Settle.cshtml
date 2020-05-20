@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>结算中心</title>
+    <script src="../../Scripts/jquery-3.4.1.js"></script>
+    <script src="../../Source/packages/layui/layui.js"></script>
+    <script src="../../Scripts/Project/Settle/settle.js"></script>
+    <link rel="stylesheet" href="../../Source/packages/layui/css/layui.css">
+    <link rel="stylesheet" href="../../Source/packages/layuiadmin/style/admin.css" media="all">
+</head>
+<body>
+    <div class="layui-fluid">
+        <div class="layui-row layui-col-space15">
+            <div class="layui-col-md16">
+                <div class="layui-card">
+                    <div class="layui-card-header">结算中心</div>
+                    <div class="layui-card-body">
+
+                        <blockquote class="layui-elem-quote layui-quote-nm">
+                            <form class="layui-form">
+                                <div class="layui-form-item">
+                                    <div class="layui-inline">
+                                        <label class="layui-form-label">查询</label>
+                                        <div class="layui-input-block">
+                                            <input type="text" name="input" id="input" lay-verify="required" style="width:300px;" placeholder="请输入待结算患者姓名，支持模糊查询" autocomplete="off" class="layui-input">
+                                        </div>
+                                    </div>
+                                    <button type="button" class="layui-btn layui-btn-normal" id="search">
+                                        <i class="layui-icon">&#xe615;</i>
+                                    </button>
+                                </div>
+                            </form>
+                        </blockquote>
+                        <blockquote class="layui-elem-quote layui-quote-nm">
+                            <!--床位的表格-->
+                            <table id="table_settle" lay-filter="table_settle"></table>
+                        </blockquote>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--layui模版引擎文档(laytpl)-->
+    <!--修改表格的工具列-->
+    <script type="text/html" id="toolbar">
+        <a class="operation" lay-event="pay" title="支付结账">
+            <i class="layui-icon layui-icon-rmb"></i>结账
+        </a>
+        <a class="operation" style="margin-left:10px;" lay-event="press" title="催款">
+            <i class="layui-icon layui-icon-close"></i>催款
+        </a>
+        <a class="operation" style="margin-left:10px;" lay-event="arrears" title="欠款处理">
+            <i class="layui-icon layui-icon-tread"></i>欠款处理
+        </a>
+    </script>
+</body>
+</html>
+

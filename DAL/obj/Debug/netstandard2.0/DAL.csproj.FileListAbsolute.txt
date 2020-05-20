@@ -1,0 +1,9 @@
+F:\Study\Projects\HospitalInformationSystem\DAL\bin\Debug\netstandard2.0\DAL.deps.json
+F:\Study\Projects\HospitalInformationSystem\DAL\bin\Debug\netstandard2.0\DAL.dll
+F:\Study\Projects\HospitalInformationSystem\DAL\obj\Debug\netstandard2.0\DAL.csprojAssemblyReference.cache
+F:\Study\Projects\HospitalInformationSystem\DAL\obj\Debug\netstandard2.0\DAL.csproj.CoreCompileInputs.cache
+F:\Study\Projects\HospitalInformationSystem\DAL\obj\Debug\netstandard2.0\DAL.AssemblyInfoInputs.cache
+F:\Study\Projects\HospitalInformationSystem\DAL\obj\Debug\netstandard2.0\DAL.AssemblyInfo.cs
+F:\Study\Projects\HospitalInformationSystem\DAL\bin\Debug\netstandard2.0\DAL.pdb
+F:\Study\Projects\HospitalInformationSystem\DAL\obj\Debug\netstandard2.0\DAL.dll
+F:\Study\Projects\HospitalInformationSystem\DAL\obj\Debug\netstandard2.0\DAL.pdb

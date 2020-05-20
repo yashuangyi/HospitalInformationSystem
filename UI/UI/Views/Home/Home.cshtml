@@ -1,0 +1,180 @@
+﻿
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>住院管理系统</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <script src="../../Scripts/jquery-3.4.1.js"></script>
+    <script src="../../Scripts/Project/Home/home.js"></script>
+    <script src="../../Source/packages/layuiadmin/layui/layui.js"></script>
+    <link rel="stylesheet" href="../../Source/packages/layuiadmin/layui/css/layui.css" media="all">
+    <link rel="stylesheet" href="../../Source/packages/layuiadmin/style/admin.css" media="all">
+
+</head>
+<body class="layui-layout-body">
+    <input type="text" id="user_id" value="@ViewBag.UserId" hidden="" />
+    <input type="text" id="user_power" hidden="" />
+    <div id="LAY_app">
+        <div class="layui-layout layui-layout-admin">
+            <div class="layui-header">
+                <!-- 头部区域 -->
+                <ul class="layui-nav layui-layout-left">
+                    <li class="layui-nav-item layadmin-flexible" lay-unselect>
+                        <a href="javascript:;" layadmin-event="flexible" title="侧边伸缩">
+                            <i class="layui-icon layui-icon-shrink-right" id="LAY_app_flexible"></i>
+                        </a>
+                    </li>
+                    <li class="layui-nav-item layui-hide-xs" lay-unselect>
+                        <a href="../Login/Login" target="_blank" title="返回前台">
+                            <i class="layui-icon layui-icon-website"></i>
+                        </a>
+                    </li>
+                    <li class="layui-nav-item" lay-unselect>
+                        <a href="javascript:;" layadmin-event="refresh" title="刷新">
+                            <i class="layui-icon layui-icon-refresh-3"></i>
+                        </a>
+                    </li>
+                </ul>
+                <ul class="layui-nav layui-layout-right" lay-filter="layadmin-layout-right">
+
+                    <li class="layui-nav-item layui-hide-xs" lay-unselect>
+                        <a href="javascript:;" layadmin-event="fullscreen" title="全屏">
+                            <i class="layui-icon layui-icon-screen-full"></i>
+                        </a>
+                    </li>
+                    <li class="layui-nav-item" lay-unselect>
+                        <a href="javascript:;">
+                            <cite id="user_name"></cite>
+                        </a>
+                        <dl class="layui-nav-child">
+                            <dd><a lay-href="../Info/Info">基本资料</a></dd>
+                            <dd><a lay-href="../EditPassword/EditPassword">修改密码</a></dd>
+                            <hr>
+                            <dd style="text-align: center;"><a href="../Login/Login">退出</a></dd>
+                        </dl>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- 侧边菜单 -->
+            <div class="layui-side layui-side-menu">
+                <div class="layui-side-scroll">
+                    <div class="layui-logo" lay-href="../Home/HomePage">
+                        <span>医院住院管理系统</span>
+                    </div>
+
+                    <ul class="layui-nav layui-nav-tree" lay-shrink="all" id="LAY-system-side-menu" lay-filter="layadmin-system-side-menu">
+                        <li data-name="home" class="layui-nav-item">
+                            <a lay-href="../Home/HomePage" lay-tips="主页" lay-direction="2">
+                                <i class="layui-icon layui-icon-home"></i>
+                                <cite>主页</cite>
+                            </a>
+                        </li>
+                        <li data-name="hospital_manage" class="layui-nav-item">
+                            <a href="javascript:;" lay-tips="住院管理" lay-direction="2">
+                                <i class="layui-icon layui-icon-service"></i>
+                                <cite>住院管理</cite>
+                            </a>
+                            <dl class="layui-nav-child">
+                                <dd data-name="record_manage">
+                                    <a lay-href="../Record/Record">病历管理</a>
+                                </dd>
+                                <dd data-name="settle">
+                                    <a lay-href="../Settle/Settle">结算中心</a>
+                                </dd>
+                                <dd data-name="bill">
+                                    <a lay-href="../Bill/Bill">账单管理</a>
+                                </dd>
+                                <dd data-name="department_manage">
+                                    <a lay-href="../Department/Department">科室管理</a>
+                                </dd>
+                                <dd data-name="bed_manage">
+                                    <a lay-href="../Bed/Bed">床位管理</a>
+                                </dd>
+                            </dl>
+                        </li>
+                        <li data-name="statisty" class="layui-nav-item">
+                            <a lay-href="../Statisty/Statisty" lay-tips="统计中心" lay-direction="2">
+                                <i class="layui-icon layui-icon-chart-screen"></i>
+                                <cite>统计中心</cite>
+                            </a>
+                        </li>
+                        <li data-name="log" class="layui-nav-item">
+                            <a lay-href="../Log/Log" lay-tips="运行日志" lay-direction="2">
+                                <i class="layui-icon layui-icon-log"></i>
+                                <cite>运行日志</cite>
+                            </a>
+                        </li>
+                        <li data-name="user" class="layui-nav-item">
+                            <a lay-href="../User/User" lay-tips="用户管理" lay-direction="2">
+                                <i class="layui-icon layui-icon-user"></i>
+                                <cite>用户管理</cite>
+                            </a>
+                        </li>
+                        <li data-name="setting" class="layui-nav-item">
+                            <a href="javascript:;" lay-tips="设置" lay-direction="2">
+                                <i class="layui-icon layui-icon-set"></i>
+                                <cite>设置</cite>
+                            </a>
+                            <dl class="layui-nav-child">
+                                <dd data-name="info">
+                                    <a lay-href="../Info/Info">基本资料</a>
+                                </dd>
+                                <dd data-name="edit_password">
+                                    <a lay-href="../EditPassword/EditPassword">修改密码</a>
+                                </dd>
+                            </dl>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 页面标签 -->
+            <div class="layadmin-pagetabs" id="LAY_app_tabs">
+                <div class="layui-icon layadmin-tabs-control layui-icon-down">
+                    <ul class="layui-nav layadmin-tabs-select" lay-filter="layadmin-pagetabs-nav">
+                        <li class="layui-nav-item" lay-unselect>
+                            <a href="javascript:;"></a>
+                            <dl class="layui-nav-child layui-anim-fadein">
+                                <dd layadmin-event="closeThisTabs"><a href="javascript:;">关闭当前标签页</a></dd>
+                                <dd layadmin-event="closeOtherTabs"><a href="javascript:;">关闭其它标签页</a></dd>
+                                <dd layadmin-event="closeAllTabs"><a href="javascript:;">关闭全部标签页</a></dd>
+                            </dl>
+                        </li>
+                    </ul>
+                </div>
+                <div class="layui-tab" lay-unauto lay-allowClose="true" lay-filter="layadmin-layout-tabs">
+                    <ul class="layui-tab-title" id="LAY_app_tabsheader">
+                        <li lay-id="../Home/HomePage" lay-attr="../Home/HomePage" class="layui-this"><i class="layui-icon layui-icon-home"></i></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 主体内容 -->
+            <div class="layui-body" id="LAY_app_body">
+                <div class="layadmin-tabsbody-item layui-show">
+                    <iframe src="../Home/HomePage" frameborder="0" class="layadmin-iframe"></iframe>
+                </div>
+            </div>
+
+            <!-- 辅助元素，一般用于移动设备下遮罩 -->
+            <div class="layadmin-body-shade" layadmin-event="shade"></div>
+        </div>
+    </div>
+
+
+    <script>
+        layui.config({
+            base: '../../Source/packages/layuiadmin/' //静态资源所在路径
+        }).extend({
+            index: 'lib/index' //主入口模块
+        }).use('index');
+    </script>
+</body>
+</html>
+
+

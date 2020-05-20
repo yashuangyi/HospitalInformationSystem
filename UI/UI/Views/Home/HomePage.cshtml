@@ -1,0 +1,162 @@
+﻿
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>主页</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <script src="../../Scripts/jquery-3.4.1.js"></script>
+    <script src="../../Scripts/Project/Home/homePage.js"></script>
+    <script src="../../Source/packages/layuiadmin/layui/layui.js?t=1"></script>
+    <link rel="stylesheet" href="../../Source/packages/layuiadmin/layui/css/layui.css" media="all">
+    <link rel="stylesheet" href="../../Source/packages/layuiadmin/style/admin.css" media="all">
+</head>
+<body>
+
+    <div class="layui-fluid">
+        <div class="layui-row layui-col-space15">
+            <div class="layui-col-md12">
+                <div class="layui-row layui-col-space15">
+                    <div class="layui-col-md6">
+                        <div class="layui-card">
+                            <div class="layui-card-header">快速导航</div>
+                            <div class="layui-card-body">
+
+                                <div class="layui-carousel layadmin-carousel layadmin-shortcut">
+                                    <div carousel-item>
+                                        <ul class="layui-row layui-col-space10">
+                                            <li class="layui-col-xs3">
+                                                <a lay-href="../Record/Record">
+                                                    <i class="layui-icon layui-icon-list"></i>
+                                                    <cite>病历管理</cite>
+                                                </a>
+                                            </li>
+                                            <li class="layui-col-xs3">
+                                                <a lay-href="../Settle/Settle">
+                                                    <i class="layui-icon layui-icon-service"></i>
+                                                    <cite>结算中心</cite>
+                                                </a>
+                                            </li>
+                                            <li class="layui-col-xs3">
+                                                <a lay-href="../Bill/Bill">
+                                                    <i class="layui-icon layui-icon-form"></i>
+                                                    <cite>账单管理</cite>
+                                                </a>
+                                            </li>
+                                            <li class="layui-col-xs3">
+                                                <a lay-href="../Department/Department">
+                                                    <i class="layui-icon layui-icon-add-1"></i>
+                                                    <cite>科室管理</cite>
+                                                </a>
+                                            </li>
+                                            <li class="layui-col-xs3">
+                                                <a lay-href="../Bed/Bed">
+                                                    <i class="layui-icon layui-icon-add-circle"></i>
+                                                    <cite>床位管理</cite>
+                                                </a>
+                                            </li>
+                                            <li class="layui-col-xs3">
+                                                <a lay-href="../Statisty/Statisty">
+                                                    <i class="layui-icon layui-icon-chart-screen"></i>
+                                                    <cite>统计中心</cite>
+                                                </a>
+                                            </li>
+                                            <li class="layui-col-xs3">
+                                                <a lay-href="../Log/Log">
+                                                    <i class="layui-icon layui-icon-log"></i>
+                                                    <cite>运行日志</cite>
+                                                </a>
+                                            </li>
+                                            <li class="layui-col-xs3">
+                                                <a lay-href="../User/User">
+                                                    <i class="layui-icon layui-icon-user"></i>
+                                                    <cite>用户管理</cite>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                        <ul class="layui-row layui-col-space10">
+                                            <li class="layui-col-xs3">
+                                                <a lay-href="../Info/Info">
+                                                    <i class="layui-icon layui-icon-username"></i>
+                                                    <cite>基本资料</cite>
+                                                </a>
+                                            </li>
+                                            <li class="layui-col-xs3">
+                                                <a lay-href="../EditPassword/EditPassword">
+                                                    <i class="layui-icon layui-icon-password"></i>
+                                                    <cite>修改密码</cite>
+                                                </a>
+                                            </li>
+                                        </ul>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layui-col-md6">
+                        <div class="layui-card">
+                            <div class="layui-card-header">数据统计</div>
+                            <div class="layui-card-body">
+
+                                <div class="layui-carousel layadmin-carousel layadmin-backlog">
+                                    <div carousel-item>
+                                        <ul class="layui-row layui-col-space10">
+                                            <li class="layui-col-xs6">
+                                                <a class="layadmin-backlog-body">
+                                                    <h3>在院病人数</h3>
+                                                    <p><cite id="inCount"></cite></p>
+                                                </a>
+                                            </li>
+                                            <li class="layui-col-xs6">
+                                                <a class="layadmin-backlog-body">
+                                                    <h3>已出院人数</h3>
+                                                    <p><cite id="outCount"></cite></p>
+                                                </a>
+                                            </li>
+                                            <li class="layui-col-xs6">
+                                                <a class="layadmin-backlog-body">
+                                                    <h3>可用床位数</h3>
+                                                    <p><cite id="freeBed"></cite></p>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="layui-col-md12">
+                <div class="layui-card">
+                    <div class="layui-card-header">
+                        注意事项
+                        <i class="layui-icon layui-icon-tips" lay-tips="使用过程中如有疑问请联系开发人员" lay-offset="5"></i>
+                    </div>
+                    <div class="layui-card-body layui-text layadmin-text">
+                        <p>1、系统初次使用时须导入科室及病床信息，否则无法办理入院手续</p>
+                        <p>2、仅超级管理员可备份系统数据及管理用户</p>
+                        <p>3、为保证数据安全，禁止删除病历、运行日志、科室等信息</p>
+                        <p>4、办理入院手续后，须将入院信息表打印交予病人家属，家属可凭表内账户及密码登录本系统查看病人住院费用清单等信息</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+  layui.config({
+    base: '../../Source/packages/layuiadmin/' //静态资源所在路径
+  }).extend({
+    index: 'lib/index' //主入口模块
+  }).use(['index', 'console']);
+    </script>
+</body>
+</html>
+

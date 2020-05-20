@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MySql.Data" Version="8.0.19" />
+    <PackageReference Include="sqlSugar" Version="5.0.0.13" />
+    <PackageReference Include="Ubiety.Dns.Core" Version="4.1.2" />
+  </ItemGroup>
+
+</Project>
